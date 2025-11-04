@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Christmas';
+    src: url("../resurse/fonts/MerryChristmasFlake.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #184F61;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    background-color: rgb(216, 19, 26);
+    height: 10vh;
+    gap: 2rem;
+    z-index: 999;
+}
+
+#logo {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo > h1 {
+    font-family: Christmas;
+    font-size: 3rem;
+    color: rgb(243, 165, 9);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+}
+
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+nav > ul > li {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    transition: background-color 0.3s;
+}
+
+nav > ul > li:hover {
+    background-color: rgb(122, 12, 12);
+    cursor: pointer;
+}
+
+nav > ul > li:nth-child(3) {
+    gap: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.sageata {
+    vertical-align: middle;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(-90deg);
+    font-size: 1rem;
+}
+
+.dropdown-text {
+    display: inline-block;
+}
+
+#dropdown-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    padding: 0 1rem;
+}
+
+#dropdown {
+    display: none;
+}
+
+.submeniu {
+    font-size: 0.9rem;
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    top: 100%;
+    left: 0;
+    background-color: rgb(195, 15, 22);
+    border-radius: 0  0 5px 5px;
+}
+
+.submeniu > li {
+    padding: 0.8rem 1.2rem;
+}
+
+.submeniu > li:hover {
+    background-color: red;
+}
+
+nav > ul > li:nth-child(3) #dropdown:checked + #dropdown-label .sageata {
+    transform: rotate(90deg);
+}
+
+nav > ul > li:nth-child(3) #dropdown:checked ~ .submeniu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: max-content;
+}
+
+nav > ul > li:nth-child(3) #dropdown:checked + #dropdown-label {
+    background-color: rgb(122, 12, 12);
+}
+
+/* nav > ul > li:nth-child(3):has(#dropdown:checked) {     //varianta modernă de a menține activ efectul pe un element selectat din meniul de navigație
+    background-color: red;
+} */
+
+
