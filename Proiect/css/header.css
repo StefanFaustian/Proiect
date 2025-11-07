@@ -23,12 +23,22 @@ header {
     height: 10vh;
     gap: 2rem;
     z-index: 999;
+    user-select: none;
+    padding-left: 1.5rem;
+}
+
+.link {
+    display: flex;
+    flex-shrink: 0;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
 }
 
 #logo {
     display: flex;
     flex-shrink: 0;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -36,6 +46,13 @@ header {
     font-family: Christmas;
     font-size: 3rem;
     color: rgb(243, 165, 9);
+}
+
+#logo svg {
+    height: 50px;
+    width: 45px;
+    transform: scale(3);
+    display: flex;
 }
 
 nav {
@@ -143,5 +160,4 @@ nav > ul > li:nth-child(3) #dropdown:checked + #dropdown-label {
 /* nav > ul > li:nth-child(3):has(#dropdown:checked) {     //varianta modernă de a menține activ efectul pe un element selectat din meniul de navigație
     background-color: red;
 } */
-
 
