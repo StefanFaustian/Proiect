@@ -4,6 +4,7 @@
 
 #stea {
     fill: gold;
+    filter: drop-shadow(0 -10px 1rem gold)
 }
 
 #trunchi {
@@ -12,6 +13,8 @@
 
 #luciu {
     fill: white;
+    animation: sclipire 1.5s infinite alternate;
+    animation-timing-function: ease-in-out;
 }
 
 .nivel {
@@ -22,8 +25,53 @@
     fill: yellow;
 }
 
+
 .cablu {
     fill: rgb(23, 23, 23);
 }
 
+.brad {
+    height: 900px;
+    width: 500px;
+}
+
+.bec {
+  fill: yellow;
+  animation: instalatie 5s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.bec:nth-child(odd) {
+  animation-duration: 4.5s;
+  animation-delay: 0.5s;
+}
+
+.bec:nth-child(3n) {
+  animation-duration: 5.7s;
+  animation-delay: 1.2s;
+}
+
+.bec:nth-child(5n) {
+  animation-duration: 6.3s;
+  animation-delay: 2s;
+}
+
+.bec:nth-child(7n) {
+  animation-direction: reverse;
+}
+
+@keyframes instalatie {
+    0% {fill: gold; filter: drop-shadow(0 0 4px gold);}
+    16.66% {fill: crimson; filter: drop-shadow(0 0 4px crimson);}
+    33.33% {fill: forestgreen; filter: drop-shadow(0 0 4px forestgreen);}
+    50% {fill: lightblue; filter: drop-shadow(0 0 4px lightblue);}
+    66.66% {fill: orangered; filter: drop-shadow(0 0 4px orangered);}
+    83.33% {fill: dodgerblue; filter: drop-shadow(0 0 4px dodgerblue);}
+    100% {fill: gold; filter: drop-shadow(0 0 4px gold);}
+}
+
+@keyframes sclipire {
+    0%, 100% {opacity: 0;}
+    50% {opacity: 1;}
+}
 
