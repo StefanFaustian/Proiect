@@ -1,4 +1,499 @@
-html, body, main {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: 4.6rem;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#intro {
+    background-image: url("../resurse/imagini/index/introd.svg");
+    background-position: center;
+    background-size: fill;
+    background-color: rgb(174, 179, 205);
+    grid-area: intro;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 2rem;
+    height: 10rem;
+}
+
+.intro-mesaj {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.intro-mesaj > h1 {
+    font-weight: bolder;
+    font-size: clamp(1.5rem, 2vw, 3.5rem);
+    /* font-size: 2.5rem; */
+}
+
+.wrapper-layout {
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  align-items: stretch;
+  flex-grow: 1;
+  gap: 1.2rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:   "istorie istorie istorie istorie istorie istorie playlist playlist playlist playlist playlist playlist"
+                         "traditii traditii traditii traditii traditii traditii traditii traditii traditii traditii traditii traditii"
+                         "filme filme filme filme filme filme filme filme scrisoare scrisoare scrisoare scrisoare";
+}
+
+.wrapper-layout > section {
+    border-radius: 4px;
+    height: 100%;
+    /* position: relative;  */
+    z-index: 1;
+    transition: box-shadow 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.wrapper-layout > section:hover {
+    transform: translateY(-0.3rem);
+    /* box-shadow: 0 0 0 rgb(0,0,0); */
+    z-index: 2;
+    overflow: hidden;
+}
+
+#istorie:hover {
+    box-shadow: 0 0 0 0.5rem #82999B, 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#playlist:hover {
+    box-shadow: 0 0 0 0.5rem rgba(68, 68, 248, 0.877), 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#traditii:hover {
+    box-shadow: 0 0 0 0.5rem rgb(255, 238, 0), 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#filme:hover {
+    box-shadow: 0 0 0 0.5rem rgb(205, 45, 205), 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#scrisoare:hover {
+    box-shadow: 0 0 0 0.5rem #f5f5dc, 0 8px 16px rgba(0,0,0,0.3);
+}
+
+section button {
+    padding: 0.7rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+#istorie {
+    grid-area: istorie;
+    background: #82999B;
+    background: linear-gradient(45deg, rgba(130, 153, 155, 1) 0%, rgba(147, 192, 201, 1) 50%, rgba(130, 153, 155, 1) 100%);
+    display: flex; 
+    /* flex-direction: column; de adaugat la media query */
+    padding: 1rem;
+    align-items: center;
+    gap: 2rem; 
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+}
+
+.istorie-text, .playlist-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.istorie-text, .istorie-imagine {
+    flex: 1;
+    min-width: 0; 
+}
+
+.istorie-text > h3 {
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    text-align: center; 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#istorie button {
+    border: 2px solid white;
+    color: white;
+    font-size: 1rem;
+}
+
+#istorie button:hover {
+    background-color: black;
+}
+
+#istorie:hover img {
+    filter: contrast(1.2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+#istorie img, #playlist img {
+    max-width: 100%;  
+    min-width: 100%;  
+    height: auto;       
+    display: block;     
+    margin: 0 auto;     
+    object-fit: fill; 
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+#playlist {
+    grid-area: playlist;
+    background: #0000FF;
+background: linear-gradient(194deg, rgba(0, 0, 255, 1) 0%, rgba(4, 111, 189, 1) 35%, rgba(14, 73, 150, 1) 50%, rgba(4, 111, 189, 1) 65%, rgba(0, 0, 255, 1) 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: -4px 4px 4px rgba(0,0,0,0.2);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.playlist-text h3 {
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    text-align: center; 
+    color: white;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#playlist button {
+    /* position: relative; */
+    border-radius: 100%;
+    box-shadow: 0 10px 9px rgba(0,0,0,0.7);
+    background: linear-gradient(45deg, orange, red, purple);
+    border: 2px outset yellow;
+    font-size: 2rem;
+    color: snow;
+    padding: 1rem 1rem 1rem 1.38rem;
+    transition-duration: 1s;
+}
+
+#playlist button:hover {
+    border: 2px inset yellow;
+    background: linear-gradient(-45deg, orange, red, purple);
+    transform: scale(1.05);
+}
+
+#traditii {
+    grid-area: traditii;
+    display: flex;
+    align-items: center;
+    background: rgb(255, 238, 0);
+    background: linear-gradient(10deg, rgba(255, 238, 0, 1) 0%, rgba(230, 223, 30, 1) 35%, rgba(235, 220, 54, 1) 43%, rgba(222, 191, 13, 1) 50%, rgba(235, 220, 54, 1) 58%, rgba(230, 223, 30, 1) 65%, rgba(255, 238, 0, 1) 100%);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+#traditii h3 {
+    text-align: center; 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+}
+
+#traditii h4 {
+    height: 5%;
+    padding-bottom: 2rem;
+    font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+}
+
+.traditii-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1.25;
     height: 100%;
     width: 100%;
+}
+
+.traditii-text img {
+    display: block;
+    height: 50%;
+    width: 50%;
+}
+
+#filme {
+    grid-area: filme;
+    background: #800080;
+    background: radial-gradient(circle, rgba(128, 0, 128, 1) 0%, rgba(247, 67, 247, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    box-shadow: 4px -4px 4px rgba(0,0,0,0.2);
+}
+
+.filme-text {
+    flex: 1;
+}
+
+.filme-text h3 {
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    text-align: center; 
+    color: white;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pachet {
+    width: 100%;
+    height: 24rem;
+    flex: 2;
+    z-index: 10;
+}
+
+.pachet-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.pachet-wrapper a {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 18rem;
+    width: 200px;
+    position: absolute;
+    transform-origin: center 8rem;
+    top: 1rem;
+    left: 30%;
+    border: 0.6rem solid snow;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.pachet-wrapper .card1 {
+    background-image: url(../resurse/imagini/index/card1.png);
+    transform: rotate(-15deg);
+    left: 10%;
+    top: 15%;
+    z-index: 12;
+}
+
+.pachet-wrapper:hover .card1 {
+    transform: rotate(-20deg);
+    left: 8%;
+    top: 18%;
+}
+
+.card2 {
+     background-image: url(../resurse/imagini/index/card2.png);
+    z-index: 11;
+}
+
+.pachet-wrapper .card3 {
+    background-image: url(../resurse/imagini/index/card3.png);
+    transform: rotate(15deg);
+    left: 50%;
+    top: 15%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.pachet-wrapper:hover .card3 {
+    transform: rotate(20deg);
+    left: 52%;
+    top: 18%;
+}
+
+
+#scrisoare {
+    grid-area: scrisoare;
+    background: #C0C0C0;
+    background: radial-gradient(circle, rgba(192, 192, 192, 1) 0%, rgba(245, 245, 220, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 1rem;
+    box-shadow: -4px -4px 4px rgba(0,0,0,0.2);
+    gap: 2rem;
+}
+
+#scrisoare h3 {
+    text-align: center;
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#scrisoare a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#scrisoare img {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+#scrisoare img:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1450px) {
+    
+    .wrapper-layout {
+        grid-template-columns: repeat(10, 1fr);
+        margin: 0 auto;
+    }
+
+    #scrisoare {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    .wrapper-layout {
+
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "istorie istorie istorie istorie istorie istorie"
+                             "playlist playlist playlist playlist playlist playlist"
+                             "traditii traditii traditii traditii traditii traditii"
+                             "filme filme filme filme filme filme" 
+                             "scrisoare scrisoare scrisoare scrisoare scrisoare scrisoare";
+    }
+
+    #traditii {
+        flex-direction: column;
+    }
+
+    .traditii-text {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .traditii-text img {
+        height: 72%;
+    }
+
+    #scrisoare img {
+        height: 260%;
+        width: 40%;
+    }
+
+    #scrisoare a {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+    }
+}
+    
+@media screen and (max-width: 812px) {
+
+    .wrapper-layout {
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "istorie istorie istorie"
+                             "playlist playlist playlist"
+                             "traditii traditii traditii"
+                             "filme filme filme" 
+                             "scrisoare scrisoare scrisoare";
+    }
+
+    #filme {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .pachet {
+    width: 100%;
+    height: 24rem;
+    flex: 5;
+    z-index: 10;
+    }
+
+    .spacer {
+        height: 24rem;
+    }
+
+    .pachet-wrapper {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 585px) {
+    #istorie {
+        flex-direction: column;
+    }
+
+    .pachet-wrapper a {
+        height: 16rem;
+        width: 165px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .wrapper-layout {
+        padding: 2rem 1rem;
+    }
+
+    .pachet-wrapper a {
+        width: 120px;
+        height: 11rem;
+        border-width: 0.4rem;
+        transform-origin: center 5.5rem;
+    }
+
+    .pachet, .spacer {
+        height: 18rem;
+    }
+
+    .pachet-wrapper .card1 {
+        left: 0;
+        top: 20%;
+        transform: rotate(-12deg);
+    }
+
+    .pachet-wrapper .card2 {
+        left: calc(50% - 60px); 
+    }
+
+    .pachet-wrapper .card3 {
+        left: auto; 
+        right: 0; 
+        top: 20%;
+        transform: rotate(12deg);
+    }
+
+    .pachet-wrapper:hover .card1 {
+        transform: rotate(-16deg);
+        left: -2%;
+        top: 22%;
+    }
+
+    .pachet-wrapper:hover .card3 {
+        transform: rotate(16deg);
+        right: -2%;
+        top: 22%;
+    }
+    #scrisoare img {
+        height: auto;
+        width: 60%;   
+    }
 }

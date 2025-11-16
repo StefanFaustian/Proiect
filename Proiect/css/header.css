@@ -12,7 +12,8 @@
 
 body, html {
     background-color: #184F61;
-    width: 100dvw;
+    height: 100%;
+    width: 100%;
 }
 
 header {
@@ -74,6 +75,15 @@ nav {
     height: 100%;
 }
 
+nav a {
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
 nav > ul {
     list-style-type: none;
     display: flex;
@@ -86,7 +96,6 @@ nav > ul > li, .meniu > li {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
     transition: background-color 0.3s;
     height: 100%;
 }
@@ -135,6 +144,7 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
     height: 100%;
     width: 100%;
     user-select: none;
+    padding: 0 1rem;
 }
 
 #dropdown {
@@ -279,14 +289,14 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
     display: none;
 }
 
-@media (max-width: 1052px) {
+@media (max-width: 1117px) {
 
     .link > h1 {
         display: none;
     }
 }
 
-@media (max-width: 803px) {
+@media (max-width: 871px) {
 
     header {
         justify-content: space-between;
@@ -351,6 +361,15 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
         justify-content: flex-start;
         user-select: none;
         font-weight: 700;
+    }
+    
+    #overlay a {
+        text-decoration: none;
+        color: white;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
     header:has(#hamburger-clic:checked) + #overlay {
@@ -454,26 +473,3 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
         display: none;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

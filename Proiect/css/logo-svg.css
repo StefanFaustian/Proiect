@@ -4,7 +4,8 @@
 
 #stea {
     fill: gold;
-    filter: drop-shadow(0 -10px 1rem gold)
+    animation: stea 1s infinite;
+    animation-timing-function: ease-in;
 }
 
 #trunchi {
@@ -13,8 +14,9 @@
 
 #luciu {
     fill: white;
-    animation: sclipire 1.5s infinite alternate;
+    animation: sclipire 1s infinite alternate;
     animation-timing-function: ease-in-out;
+    animation-delay: 1s;
 }
 
 .nivel {
@@ -73,5 +75,10 @@
 @keyframes sclipire {
     0%, 100% {opacity: 0;}
     50% {opacity: 1;}
+}
+
+@keyframes stea {
+  0%, 100% {filter: drop-shadow(0 -10px 1rem gold);}
+  50% {filter: none;}
 }
 
