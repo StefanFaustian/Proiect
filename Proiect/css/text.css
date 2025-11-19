@@ -1,0 +1,201 @@
+.container-pag {
+    max-width: 1400px;
+    margin: 0 auto 0 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    box-shadow: 6px 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.titlu-pagina {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-pag aside {
+    width: 20%;
+    position: sticky;
+    height: max-content;
+    top: 4.6rem;
+}
+
+.container-pag aside h2 {
+    padding: 1rem;
+    width: 100%;
+    /* border-bottom: 2px solid azure;
+    border-left: 2px solid azure; */
+    border: 1.5px solid azure;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.container-pag aside nav {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: max-content;
+}
+
+.container-pag aside nav a {
+    font-size: 1rem;
+    color: #184F61;
+    /* height: 100%; */
+    width: 100%;
+    padding: 1rem;
+    /* border-bottom: 2px solid azure;
+    border-left: 2px solid azure; */
+    border: 1.5px solid azure;
+    transition-duration: 0.25s;
+}
+
+.container-pag aside nav a::before {
+    content: "❄️";
+}
+
+.container-pag aside nav a:hover {
+    background-color: #184F61;
+    color: lightblue;
+} 
+
+.container-pag main {
+    flex: 1;
+    min-width: 0;
+    background-color: azure;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem; */
+    /* position: relative; */
+}
+
+.container-pag main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-margin-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.container-pag main section h3 {
+    padding-bottom: 0.5rem;
+}
+
+.container-pag main section p {
+    text-align: justify;
+    line-height: 1.75rem;
+}
+
+.galerie {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* flex-grow: 1; */
+    padding-top: 1.5rem;
+    gap: 1rem;
+}
+
+.galerie figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.3rem;
+    border: 1.5px solid rgb(255, 0, 0);
+    background-color: snow;
+    min-width: 300px;
+    max-width: 400px;
+    /* height: 100%; */
+    gap: 0.25rem;
+}
+
+.galerie figure img {
+    height: auto;
+    width: 100%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.galerie figure img:hover {
+    opacity: 0.8;
+}
+
+.galerie figure figcaption {
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.burger-cuprins {
+    position: fixed;
+    top: 7.8rem;
+    left: 3.2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 99;
+    user-select: none;
+    cursor: pointer;
+    transform: translate(-3.2rem, -3.2rem);
+    width: min-content;
+    padding: 0.3rem 0.5rem;
+    transition-duration: 0.4s;
+    display: none;
+}
+
+.burger-cuprins:hover {
+    background-color: gainsboro;
+}
+
+.burger-cuprins:active {
+    font-weight: 100;
+}
+
+
+
+@media screen and (min-width: 1806px) {
+    .container-pag {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+    .galerie {
+        flex-wrap: wrap;
+    }
+
+    .galerie figure {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .burger-cuprins {
+        display: block;
+    }
+
+    .container-pag aside {
+        display: flex;
+        width: 50%;
+        position: fixed;
+        height: max-content;
+        top: 7.2rem;
+        left: 0;
+        z-index: 99;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .container-pag aside.cuprins-activ {
+        transform: translateX(0);
+    }
+
+    /* .burger-cuprins:hover {
+        background-color: gainsboro;
+} */
+}

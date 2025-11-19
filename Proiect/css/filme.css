@@ -1,0 +1,101 @@
+.container-pag {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.container-pag main {
+    flex: 1;
+    min-width: 0;
+    /* background-color: #4D3E2B; */
+    background-color: #3d0c02;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#filme-intro {
+    text-align: center;
+    text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    background: linear-gradient(45deg, darkgreen, green, lightgreen, green, darkgreen);
+    background-size: 300% 300%; 
+    animation: gradient-animation 10s ease infinite;
+    color: aliceblue;
+    border-radius: 0 0 20% 20%;
+    box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.75);
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%; 
+    }
+    100% {
+        background-position: 0% 50%; 
+    }
+}
+
+
+
+
+
+
+#wrapper-grid {
+    /* max-width: 1400px; 
+    margin: 0 auto; */
+    padding: 4rem 2rem;
+    display: grid;
+    flex-grow: 1;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* height: 100%; */
+}
+
+#wrapper-grid article {
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 2 / 3;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    border: 2px inset snow;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+}
+
+#wrapper-grid article::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0,0,0,0));
+    pointer-events: none;
+}
+
+#wrapper-grid article:hover {
+    opacity: 0.8;
+}
+
+#wrapper-grid article h6 {
+    font-size: medium;
+    color: white;
+    z-index: 2;
+    text-align: center;
+}

@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/logo-svg.css">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/scrisoare.css">
     </head>
     <body>
         <header>
@@ -230,7 +231,7 @@
             </label>
             <nav>
                 <ul class="meniu">
-                    <li><a href="istoric.html">Scurt istoric</a></li>
+                    <li><a href="istoric.html">Povestea Crăciunului</a></li>
                     <li class="submeniu-responsive">
                         <div class="wrapper-submeniu">
                            <input type="checkbox" id="dropdown">
@@ -256,7 +257,7 @@
         </header>
         <div id="overlay">
           <ul class="meniu">
-                    <li><a href="istoric.html">Scurt istoric</a></li>
+                    <li><a href="istoric.html">Povestea Crăciunului</a></li>
                     <li class="submeniu-responsive">
                         <div class="wrapper-submeniu">
                            <input type="checkbox" id="dropdown2">
@@ -278,7 +279,36 @@
                     <li><a href="scrisoare.html">Scrisoare către Moș Crăciun</a></li>
                 </ul>
         </div>
-        <main>
+        <main>  
+            <section class="intro-scrisoare">
+               <img src="resurse/imagini/scrisoare/alabaster.png" alt="Alabaster Snowball">
+               <h3>Acum ai ocazia să-i trimiți o scrisoare lui Moș Crăciun cu ajutorul elfului Alabaster Snowball!</h3>
+            </section>
+            <hr>
+            <form id="scrisoare-form">
+               <div class="date-personale">
+                  <div class="input-grup">
+                     <label for="nume">Nume și prenume:</label>
+                     <input type="text" id="nume" name="nume" required minlength="3">
+                  </div>
+                  <div class="input-grup">
+                     <label for="mail">E-mail:</label>
+                     <input type="email" id="mail" name="mail" required>
+                  </div>
+                  <div class="nr-grup">
+                     <label for="varsta">Vârsta:</label>
+                     <input type="number" id="varsta" name="varsta" min="6" max="100" required>
+                  </div>
+               </div>
+               <div class="input-grup">
+                  <label for="mesaj">Mesajul tău pentru Moș Crăciun:</label>
+                  <textarea id="mesaj" name="mesaj" placeholder="Dragă Moșule..." required></textarea>
+               </div>
+               <button type="submit" id="submit" name="submit">
+                  <h5>Trimite</h5>
+                  <img src="resurse/imagini/scrisoare/elf.png">
+               </button>
+            </form>
         </main>
         <footer>
          <div class="contact" style="padding-left: 1rem;">
@@ -510,5 +540,5 @@
          </div>
         </footer>
     </body>
-    <script></script>
+    <script src="js/dropdown.js"></script>
 </html>

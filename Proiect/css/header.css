@@ -163,9 +163,17 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
-.submeniu > li {
+/* .submeniu > li {
     padding: 0.8rem 1.2rem;
     transition: background-color, 0.3s;
+} */
+
+.submeniu > li {
+    transition: background-color, 0.3s;
+}
+
+.submeniu a {
+    padding: 1rem 2rem;
 }
 
 .submeniu > li:hover {
@@ -374,6 +382,10 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
 
     header:has(#hamburger-clic:checked) + #overlay {
         display: flex;
+    }
+
+    header:has(#hamburger-clic:checked) ~ .container-pag main .burger-cuprins {
+        display: none;
     }
 
     .meniu {

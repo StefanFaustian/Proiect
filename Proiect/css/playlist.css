@@ -1,0 +1,26 @@
+main {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* max-width: 1400px;
+    margin: 0 auto; */
+    padding: 4rem 0;
+}
+
+.constructie h2 {
+    color: wheat;
+    animation: atentie 1s infinite alternate;
+    text-align: center;
+}
+
+
+@keyframes atentie {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}

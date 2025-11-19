@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 main {
@@ -450,7 +450,7 @@ background: linear-gradient(194deg, rgba(0, 0, 255, 1) 0%, rgba(4, 111, 189, 1) 
 @media screen and (max-width: 400px) {
 
     .wrapper-layout {
-        padding: 2rem 1rem;
+        padding: 2rem 1rem;  
     }
 
     .pachet-wrapper a {
