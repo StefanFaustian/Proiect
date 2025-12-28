@@ -15,7 +15,6 @@ main {
 #intro {
     background-image: url("../resurse/imagini/index/introd.svg");
     background-position: center;
-    background-size: fill;
     background-color: rgb(174, 179, 205);
     grid-area: intro;
     display: flex;

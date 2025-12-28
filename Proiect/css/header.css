@@ -48,7 +48,6 @@ header {
     align-items: center;
     justify-content: center;
     height: 100%;
-
 }
 
 .link > h1 {
@@ -169,7 +168,7 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
 } */
 
 .submeniu > li {
-    transition: background-color, 0.3s;
+    transition: background-color 0.3s;
 }
 
 .submeniu a {
@@ -287,6 +286,47 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
 
 #glob:hover {
     filter: drop-shadow(0 -10px 1rem gold);
+}
+
+.filtru {
+    filter: drop-shadow(0 -10px 1rem gold);
+}
+
+.afis {
+    position: absolute;
+    top: 103%;
+    left: 0;
+    background-color: gold;
+    width: 100%;
+    display: flex !important; 
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    box-shadow: 0 3px 1px rgba(245, 222, 179,0.4);
+}
+
+.afis-text {
+    font-size: 1.75rem;
+    font-weight: bolder;
+}
+
+.ceas {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.unitate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.unitate span:nth-child(1) {
+    font-size: 2rem;
 }
 
 #hamburger-clic, #hamburger-clic-label {
