@@ -48,11 +48,12 @@
 #wrapper-grid {
     /* max-width: 1400px; 
     margin: 0 auto; */
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     display: grid;
     flex-grow: 1;
     gap: 1.2rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    position: relative;
     /* height: 100%; */
 }
 
@@ -94,4 +95,162 @@
     color: white;
     z-index: 2;
     text-align: center;
+}
+
+.article-gone {
+    display: none;
+}
+
+.modal { 
+    inset: 0; 
+    z-index: 9;
+    /* background-color: #3d0c02; */
+    background: rgba(0,0,0,0.55);
+    display: none;
+    position: fixed;
+    z-index: 9;
+    overflow: auto;
+    top: 4.6rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+} 
+
+.modal-activ {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-antet {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75rem;
+}
+
+.modal-antet button {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    user-select: none;
+    cursor: pointer;
+    color: lightgray;
+
+}
+
+.modal-antet button:hover {
+    color: honeydew;
+}
+
+.modal-continut {
+    padding: 1.5rem;
+}
+
+
+.modal-continut{
+    width: 100%;
+    max-width: 1400px;     
+    margin: 0 auto;
+    background: #3d0c02;  
+    margin-top: 1.7rem;
+}
+
+.descriere {
+    display: flex;
+    gap: 1rem;
+    color: whitesmoke;
+}
+
+.poster {
+    max-height: 22.5rem;
+    min-width: 15rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 2 / 3;
+}
+
+.titlu {
+    font-size: 2rem;
+}
+
+.detalii {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detalii p span, .detalii p {
+    font-size: 1.1rem;
+}
+
+.detalii span {
+    color: lightgrey;
+}
+
+.video-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1rem;
+}
+
+.video-box h4 {
+    font-size: 1.75rem;
+    color: whitesmoke;
+}
+
+.iframe-wrap{
+  width: min(100%, 951px);   
+  aspect-ratio: 16 / 9;
+}
+
+.iframe-wrap iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 552px) {
+    .poster {
+        max-height: 18rem;
+        min-width: 12rem;
+    }
+
+    .titlu {
+        font-size: 1.5rem;
+    }
+
+    .detalii p span, .detalii p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 470px) {
+    .poster {
+        max-height: 15rem;
+        min-width: 10rem;
+    }
+
+    .titlu {
+        font-size: 1.2rem;
+    }
+
+    .detalii p span, .detalii p {
+        font-size: 0.78rem;
+    }
+}
+
+body.no-scroll{ 
+    overflow: hidden; 
 }
