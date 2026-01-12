@@ -310,6 +310,7 @@ nav > ul > li:nth-child(2) > .wrapper-submeniu {
 .afis-text {
     font-size: 1.75rem;
     font-weight: bolder;
+    text-align: center;
 }
 
 .ceas {

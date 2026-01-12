@@ -279,20 +279,43 @@
                     <li><a href="scrisoare.html">Scrisoare către Moș Crăciun</a></li>
                 </ul>
         </div>
-        <main>  
+        <main> 
+            <div id="login-modal" class="modal">
+               <a href="scrisoare.html">&#11152; <span>Renunță</span></a>
+               <h1>Conectează-te la un cont</h1>
+               <h6>Nu ai cont? <a href="register.html">Înregistrează-te aici!</a></h6>
+               <form novalidate>
+                  <label for="email">E-mail<span></span></label>
+                  <input id="email" type="email">
+                  <label for="pass">Parolă<span></span></label>
+                  <input id="pass" type="password">
+                  <button type="submit">Login</button>
+               </form>
+            </div>
+            <div class="autentificare-wrap">
+               <p><span class="status"></span><span class="status-mail"></span></p>
+               <button id="autentificare">
+                  <img src="resurse/imagini/scrisoare/login.png">
+                  <span>Login</span>
+               </button>
+               <a id="register" href="register.html">
+                  <img src="resurse/imagini/scrisoare/register.png">
+                  <span>Register</span>
+               </a>
+            </div> 
             <section class="intro-scrisoare">
                <img src="resurse/imagini/scrisoare/alabaster.png" alt="Alabaster Snowball">
-               <h3>Acum ai ocazia să-i trimiți o scrisoare lui Moș Crăciun cu ajutorul elfului Alabaster Snowball!</h3>
+               <h3><span>Conectează-te la un cont ca</span> să-i trimiți o scrisoare lui Moș Crăciun cu ajutorul elfului Alabaster Snowball!</h3>
             </section>
             <hr>
-            <form id="scrisoare-form">
+            <form id="scrisoare-form" novalidate>
                <div class="date-personale">
                   <div class="input-grup">
                      <label for="nume">Nume și prenume:</label>
                      <input type="text" id="nume" name="nume" required minlength="3">
                   </div>
                   <div class="input-grup">
-                     <label for="mail">E-mail:</label>
+                     <label for="mail">E-mail:<span></span></label>
                      <input type="email" id="mail" name="mail" required>
                   </div>
                   <div class="nr-grup">
@@ -303,8 +326,9 @@
                <div class="input-grup">
                   <label for="mesaj">Mesajul tău pentru Moș Crăciun:</label>
                   <textarea id="mesaj" name="mesaj" placeholder="Dragă Moșule..." required></textarea>
+                  <span>*Toate câmpurile sunt obligatorii</span>
                </div>
-               <button type="submit" id="submit" name="submit">
+               <button type="submit" id="trimite" name="trimite" disabled>
                   <h5>Trimite</h5>
                   <img src="resurse/imagini/scrisoare/elf.png">
                </button>
@@ -541,4 +565,5 @@
         </footer>
     </body>
     <script src="js/dropdown.js"></script>
+    <script src="js/scrisoare.js"></script>
 </html>

@@ -15,7 +15,8 @@
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/logo-svg.css">
         <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/playlist.css">
+        <link rel="stylesheet" href="css/scrisoare.css">
+        <link rel="stylesheet" href="css/register.css">
     </head>
     <body>
         <header>
@@ -279,14 +280,18 @@
                     <li><a href="scrisoare.html">Scrisoare către Moș Crăciun</a></li>
                 </ul>
         </div>
-        <main>
-            <div class="iframe-wrap">
-               <iframe src="https://www.youtube.com/embed/2PEbA4sx-bU?list=RD2PEbA4sx-bU" title="Top Christmas Songs of All Time Playlist 🎄 Best Christmas Music 2026 🎅 Christmas Songs Playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
-            </div>
-            <div id="sep">Schimbă culoarea fundalului!<span></span></div>
-            <div class="iframe-wrap">
-               <iframe src="https://www.youtube.com/embed/45Oh_FHqPvM?si=nKfQDz6qDPlvxza3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+        <main> 
+            <h1>Creează un cont</h1>
+            <h6>Ai deja un cont? <a href="scrisoare.html#login" id="openLoginLink">Loghează-te aici!</a></h6>
+            <form novalidate>
+                <label for="email">E-mail<span></span></label>
+                <input id="email" type="email">
+                <label for="pass">Parolă<span></span></label>
+                <input id="pass" type="password">
+                <label for="conf-pass">Confirmă parolă<span></span></label>
+                <input id="conf-pass" type="password">
+                <button type="submit">Creează contul</button>
+            </form>
         </main>
         <footer>
          <div class="contact" style="padding-left: 1rem;">
@@ -519,5 +524,6 @@
         </footer>
     </body>
     <script src="js/dropdown.js"></script>
-    <script src="js/playlist.js"></script>
+    <!-- <script src="js/scrisoare.js"></script> -->
+    <script src="js/register.js"></script>
 </html>

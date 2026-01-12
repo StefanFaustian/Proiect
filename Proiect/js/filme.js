@@ -137,6 +137,14 @@
 //     alert(err);
 // })
 
+function loadDeVazut() {
+    return JSON.parse(localStorage.getItem("filmeDeVazut") || "[]");
+}
+
+function saveDeVazut(filmeDeVazut) {
+    localStorage.setItem("filmeDeVazut", JSON.stringify(filmeDeVazut));
+}
+
 let filme = {};
 fetch("json/filme.json").then(function(response) {
     if(response.status == 200)
@@ -159,11 +167,6 @@ fetch("json/filme.json").then(function(response) {
 })
 
 function initModal(filme) {
-// for (let id in filme) {
-//     console.log(id);
-//     console.log(filme[id]);
-// }
-    
     let modal = document.getElementById("film-modal");
     let casete = document.getElementsByClassName("film-card");
     let buton = document.querySelector(".modal-antet button");
@@ -171,7 +174,10 @@ function initModal(filme) {
     buton.onclick = function() {
         modal.classList.remove("modal-activ");
         document.body.classList.remove("no-scroll");
+        document.querySelector("iframe").src="";
     }
+
+    const filmeDeVazut = loadDeVazut();
 
     for (let caseta of casete) {
         caseta.onclick = function() {
@@ -192,8 +198,31 @@ function initModal(filme) {
                     document.querySelector(`.${detaliu}`).innerText = film[detaliu]
                 }
             }
-    }
-    }
+        }
 
+        const bookmark = caseta.querySelector(".bookmark");
+        const img = bookmark.querySelector("img");
+
+        if (filmeDeVazut.find(id => id === caseta.id)) 
+            img.src = "resurse/imagini/filme/vazut.png";
+
+        bookmark.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (img.src.endsWith("/vazut.png")) {
+                img.src = "resurse/imagini/filme/nevazut.png";
+                const i = filmeDeVazut.indexOf(caseta.id);
+                if (i != -1)
+                    filmeDeVazut.splice(i, 1);
+            }
+            else {
+                img.src = "resurse/imagini/filme/vazut.png";
+                filmeDeVazut.push(caseta.id);
+            }
+            saveDeVazut(filmeDeVazut);
+            console.log(localStorage);
+        });
+    }
 }
+
+
 

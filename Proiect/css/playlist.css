@@ -1,26 +1,78 @@
 main {
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    flex-direction: row;
+    /* background-color: rgba(0, 0, 0, 0.6); */
     /* max-width: 1400px;
     margin: 0 auto; */
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
+    width: 100%;
+    /* min-height: 800px; */
 }
 
-.constructie h2 {
-    color: wheat;
-    animation: atentie 1s infinite alternate;
-    text-align: center;
+.iframe-wrap {
+  /* height: %; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
+#sep span{
+  display: inline-block;  
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../resurse/imagini/playlist/click.png");
+  background-size: contain;               
+  background-repeat: no-repeat;
+  background-position: center; 
+  margin-left: 0; 
+  margin-top: 0.5rem;    
+  transform: rotate(90deg);    
+}
+#sep {
+  width: 5%;
+  height: 100%;
+  border-width: 0.8rem;
+  border-color: red;
+  border-style: double;
+  filter: drop-shadow(0 0  1rem red);
+  cursor: pointer;
+  transition-duration: 0.4s;
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: azure;
+  text-shadow: 1px 1px 2px black;
+}
 
-@keyframes atentie {
-    from {
-        transform: scale(1);
+.iframe-wrap iframe {
+  width: 90%;
+  border-width: 0.3rem;
+  border-color: grey;
+  aspect-ratio: 16 / 9;
+  filter: drop-shadow(0 0  1rem grey);
+}
+
+@media (max-width: 1023px) {
+    main {
+        flex-direction: column;
     }
 
-    to {
-        transform: scale(1.2);
+    #sep {
+        height: 4rem;
+        width: 100%;
+        background: yellow;
+        writing-mode: initial;
+    }
+
+    #sep span {
+      margin-left: 0.5rem;        
+      margin-top: 0; 
+      transform: rotate(-360deg);  
     }
 }

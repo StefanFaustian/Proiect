@@ -7,10 +7,12 @@ main {
     margin-top: 4.6rem;
     gap: 1.5rem;
     padding: 2rem;
+    padding-top: 4rem;
     align-items: center;
     background: #22C1C3;
     background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     width: 100%;
+    position: relative;
 }
 
 .intro-scrisoare {
@@ -18,6 +20,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding-top: 1rem;
 }
 
 .intro-scrisoare img {
@@ -68,6 +71,15 @@ main hr {
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
     max-width: 25rem;
     transition-duration: 0.25s;
+}
+
+.input-grup span {
+    font-size: 0.8rem;
+    color: red;
+}
+
+#scrisoare-form input[disabled], textarea[disabled], #submit[disabled] {
+    cursor: not-allowed;
 }
 
 .nr-grup {
@@ -132,11 +144,11 @@ textarea:focus {
     transition-duration: 0.3s;
 }
 
-#scrisoare-form button:hover {
+#scrisoare-form button:not([disabled]):hover {
     opacity: 0.9;
 }
 
-#scrisoare-form button:active {
+#scrisoare-form button:not([disabled]):active {
     transform: scale(0.9);
 }
 
@@ -149,4 +161,193 @@ textarea:focus {
 
 #scrisoare-form button h5 {
     font-size: 1rem;
+}
+
+.autentificare-wrap {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.autentificare-wrap p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    align-items: center;
+}
+
+.status {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.status-mail {
+    font-size: 0.8rem;
+}
+
+#autentificare, #register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(72, 169, 72);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#autentificare:hover, #register:hover {
+    opacity: 0.8;
+}
+
+#autentificare img, #register img {
+    /* height: 1.75rem; */
+    height: 1.5rem;
+}
+
+#autentificare span, #register span {
+    /* font-size: 1rem; */
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+#register {
+    background-color: rgb(129, 129, 227);
+    text-decoration: none;
+    color: black;
+}
+
+.logout {
+    background-color: rgb(240, 66, 66)!important;
+}
+
+.modal { 
+    inset: 0; 
+    z-index: 9;
+    /* background-color: #3d0c02; */
+    background: wheat;
+    display: none;
+    position: absolute;
+    z-index: 9;
+    overflow: auto;
+    /* top: 4.6rem; */
+    padding-top: 4rem;
+}
+
+.modal > a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;
+    color: black;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.modal > a span {
+    font-size: 1rem;
+}
+
+.modal > a:hover {
+    color: blue;
+}
+
+.modal-activ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal form {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    /* min-width: 30%; */
+    width: 40%;
+    min-width: 300px;
+}
+
+.modal form label {
+    font-size: 1.1rem;
+}
+
+.modal form input {
+    border: none;
+    padding: 0.8rem;
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 0.9rem;
+}
+
+.modal form button {
+    background-color: rgb(72, 169, 72);
+    font-size: 1rem;
+    font-weight: bold;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(72, 169, 72);
+    padding: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.modal form button:hover {
+    background-color: transparent;
+}
+
+.modal form button:active {
+    /* transform: scale(0.8); */
+    font-size: 0.9rem;
+}
+
+.modal form span {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+#pass {
+    font-weight: bolder;
+}
+
+.modal h1 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modal h6 a {
+    text-decoration: none;
+}
+
+@media (max-width: 370px) {
+
+    .autentificare-wrap {
+        right: 0.5rem;
+        gap: 0.8rem;
+
+    }
+
+    .status {
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .status-mail {
+        font-size: 0.7rem;
+    }
+
+    #autentificare, #register {
+        padding: 0.3rem;
+    }
 }

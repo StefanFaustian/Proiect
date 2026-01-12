@@ -1,0 +1,74 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: calc(24.675rem - 32px);
+}
+
+form label {
+    font-size: 1.1rem;
+}
+
+form input {
+    border: none;
+    padding: 0.8rem;
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 0.9rem;
+}
+
+form button {
+    background-color: rgb(129, 129, 227);
+    font-size: 1rem;
+    font-weight: bold;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(129, 129, 227);
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: transparent;
+}
+
+form button:active {
+    /* transform: scale(0.8); */
+    font-size: 0.9rem;
+}
+
+form span {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+#pass, #conf-pass {
+    font-weight: bolder;
+}
+
+h1 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+h6 a {
+    text-decoration: none;
+}
+
+@media (max-width: 392px) {
+    form {
+        width: auto;
+    }
+
+    form label {
+        font-size: 0.8rem;
+    }
+
+    form input {
+        font-size: 0.9rem;
+    }
+}

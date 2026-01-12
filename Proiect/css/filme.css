@@ -44,7 +44,6 @@
 }
 
 
-
 #wrapper-grid {
     /* max-width: 1400px; 
     margin: 0 auto; */
@@ -97,6 +96,22 @@
     text-align: center;
 }
 
+.bookmark {
+    position: absolute;
+    top: -2px;
+    left: -8px;
+}
+
+.bookmark:hover {
+    opacity: 0.8;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.bookmark img {
+    height: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+}
+
 .article-gone {
     display: none;
 }
@@ -113,12 +128,12 @@
     top: 4.6rem;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Chrome, Safari and Opera */
 .modal::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* IE, Edge and Firefox */
 .modal {
   -ms-overflow-style: none; 
   scrollbar-width: none;  
@@ -152,7 +167,6 @@
 .modal-continut {
     padding: 1.5rem;
 }
-
 
 .modal-continut{
     width: 100%;
