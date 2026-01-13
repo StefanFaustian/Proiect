@@ -70,7 +70,7 @@ form.addEventListener("submit", (e) => {
     });
     saveUsers(users);
     alert("Cont creat cu succes!");
-    form.reset();
+    e.currentTarget.reset();
     window.location.href = "scrisoare.html";
 });
 
