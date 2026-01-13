@@ -9,27 +9,31 @@ document.addEventListener("click", (e) => {
 
 const glob = document.getElementById("glob");
 const contor = glob.querySelector("span"); 
-let dataCraciun = new Date(`${new Date().getFullYear()} 12 25`);
+const luna = 11;
+const ziua = 25;
+//const ora = 3;
+//const minutul = 47;
+let dataCraciun = new Date(2026, luna, ziua);
 let aux = {zile: 0, ore: 0, minute: 0, secunde: 0};
 const afis = document.createElement("div");
 afis.style.display = "none";
 document.querySelector("header").appendChild(afis);
 
 function counterCraciun(crt = new Date()) {
-    if (crt.getMonth() == 11 && crt.getDate() == 25) {
+
+    if (crt.getMonth() == luna && crt.getDate() == ziua) { // && crt.getHours() == ora && crt.getMinutes() == minutul 
         contor.textContent = "Crăciun fericit!";
+        dataCraciun = new Date(new Date().getFullYear() + 1, luna, ziua, ora, minutul);
         return
     }
-    if (crt.getTime() > dataCraciun.getTime()) 
-        dataCraciun = new Date(`${new Date().getFullYear()+1} 12 25`);
 
-    let timpRamas = dataCraciun - crt.getTime();
+    let timpRamas = dataCraciun.getTime() - crt.getTime();
     aux.zile = Math.floor(timpRamas/(1000 * 60 * 60 * 24));  //zile
     aux.ore = Math.floor(timpRamas%(1000 * 60 * 60 * 24)/(1000 * 60 * 60));  //ore
     aux.minute = Math.floor(timpRamas%(1000 * 60 * 60)/(1000 * 60))  //minute
     aux.secunde = Math.floor(timpRamas%(1000 * 60)/1000);  //secunde
 
-    for (unit in aux) {
+    for (let unit in aux) {
         if (aux[unit] == 0)
             continue;
         if (aux[unit] < 20)
@@ -62,9 +66,11 @@ function counterCraciun(crt = new Date()) {
 }
 
     glob.onclick = function() {
-        afis.classList.toggle("afis");
-        glob.classList.toggle("filtru");
+        if (glob.textContent != "Crăciun fericit!") {
+            afis.classList.toggle("afis");
+            glob.classList.toggle("filtru");
+        }
     }
 
 counterCraciun();
-setInterval(counterCraciun,1000);
+let timer = setInterval(counterCraciun,1000);
