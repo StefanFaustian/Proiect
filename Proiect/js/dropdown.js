@@ -16,14 +16,15 @@ const ziua = 25;
 let dataCraciun = new Date(2026, luna, ziua);
 let aux = {zile: 0, ore: 0, minute: 0, secunde: 0};
 const afis = document.createElement("div");
-afis.style.display = "none";
-document.querySelector("header").appendChild(afis);
+afis.classList.add("afis");
+const header = document.querySelector("header");
 
 function counterCraciun(crt = new Date()) {
 
     if (crt.getMonth() == luna && crt.getDate() == ziua) { // && crt.getHours() == ora && crt.getMinutes() == minutul 
         contor.textContent = "Crăciun fericit!";
         dataCraciun = new Date(new Date().getFullYear() + 1, luna, ziua, ora, minutul);
+        header.removeChild(afis)
         return
     }
 
@@ -67,7 +68,7 @@ function counterCraciun(crt = new Date()) {
 
     glob.onclick = function() {
         if (glob.textContent != "Crăciun fericit!") {
-            afis.classList.toggle("afis");
+            header.contains(afis) ? header.removeChild(afis) : header.append(afis);
             glob.classList.toggle("filtru");
         }
     }

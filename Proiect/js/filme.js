@@ -97,15 +97,9 @@ function initModal(filme) {
                 }
             }
         });
+    if (filmeDeVazut.find(id => id === caseta.id)) 
+        img.src = "resurse/imagini/filme/vazut.png";
 
-        
-
-        if (filmeDeVazut.find(id => id === caseta.id)) 
-            img.src = "resurse/imagini/filme/vazut.png";
-
-        // bookmark.addEventListener("click", (e) => {
-            
-        // });
     }
 }
 
