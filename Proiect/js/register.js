@@ -7,13 +7,13 @@ const emailForm = document.getElementById("email");
 const passForm = document.getElementById("pass");
 const confPassForm = document.getElementById("conf-pass");
 
-function loadUsers() {
-    return JSON.parse(localStorage.getItem("users") || "[]");
-}
+// function loadUsers() {
+//     return JSON.parse(localStorage.getItem("users") || "[]");
+// }
 
-function saveUsers(users) {
-    localStorage.setItem("users", JSON.stringify(users));
-}
+// function saveUsers(users) {
+//     localStorage.setItem("users", JSON.stringify(users));
+// }
 
 function seteazaEroare(camp, mesaj) {
     const label = camp.previousElementSibling;
@@ -48,30 +48,62 @@ function validareForm() {
         sw = false;
     }
 
-    const users = loadUsers();
-    if (users.find(user => user.email.toLowerCase() === email.toLowerCase())) {
-        seteazaEroare(emailForm, "E-mailul introdus este deja folosit")
-        sw = false;
-    }
+    // const users = loadUsers();
+    // if (users.find(user => user.email.toLowerCase() === email.toLowerCase())) {
+    //     seteazaEroare(emailForm, "E-mailul introdus este deja folosit")
+    //     sw = false;
+    // }
 
     return sw;  
 }
 
-form.addEventListener("submit", (e) => {
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault();
+
+//     if (!validareForm())
+//         return;
+
+//     const users = loadUsers();
+//     users.push({
+//         email: emailForm.value.trim(),
+//         pass: passForm.value
+//     });
+//     saveUsers(users);
+//     alert("Cont creat cu succes!");
+//     e.currentTarget.reset();
+//     window.location.href = "scrisoare.html";
+// });
+
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    
+    if(!validareForm()) return;
 
-    if (!validareForm())
-        return;
-
-    const users = loadUsers();
-    users.push({
+    const userData = {
         email: emailForm.value.trim(),
-        pass: passForm.value
-    });
-    saveUsers(users);
-    alert("Cont creat cu succes!");
-    e.currentTarget.reset();
-    window.location.href = "scrisoare.html";
+        password: passForm.value
+    };
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            alert(data.message);
+            e.target.reset();
+            window.location.href = "../scrisoare.html";
+        }
+        else alert("A aparut o eroare la inregistrare.");
+    } catch (error) {
+        console.error("Eroare de conexiune: ", error);
+        alert("Nu s-a putut realiza conexiunea la server");
+    }
 });
 
-console.log(localStorage);
+//console.log(localStorage);
